@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Informe o numero</h1>
+<div>
+    <label for="min">minimo </label>
+    <input type = "text" id="min">
+</div>
+<div>
+    <label for="max"> max </label>
+    <input type="text" id="max">
+</div><br>
+
+    <button id="b" >Random </button> 
+    <p id="resultado"></p>
+</body>
+
+<script>
+let b = document.querySelector('#b');
+let min = document.querySelector('#min');
+let max = document.querySelector('#max');
+let presultado = document.querySelector('#resultado');
+
+b.addEventListener('click', () =>{
+    let minimo = Number(min.value);
+    let maximo = Number(max.value);
+    resultado.innerHTML = Math.floor(Math.random()*(maximo-minimo)+minimo);
+})
+
+
+
+</script>
+</html>
