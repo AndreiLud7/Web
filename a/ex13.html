@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+        }
+        .container{
+            border: 1px solid red;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+
+<script>
+    let container = document.querySelector(".container");
+    let eventocapturado;
+    document.addEventListener('keypress', AdicionarParagrafo);
+
+    function AdicionarParagrafo(evento){
+        eventocapturado = evento;
+        let p = document.createElement("p");
+        p.innerHTML = evento.keyCode + " -  " + evento.code;
+        
+        container.append(p);
+    }
+</script>
+</html>

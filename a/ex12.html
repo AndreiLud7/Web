@@ -8,36 +8,36 @@
 </head>
 <body>
     <div class="container">
-        <div class="box" id="box1">box1</div>
-        <div class="box" id="box2">box2</div>
-        <div class="box" id="box3">box3</div>
-        <div class="box" id="box4">box4</div>
-        <div class="box" id="box5">box5</div>
+        <div class="box" id="box1"><p></p></div>
+        <div class="box" id="box2"><p></p></div>
+        <div class="box" id="box3"><p></p></div>
+        <div class="box" id="box4"><p></p></div>
+        <div class="box" id="box5"><p></p></div>
     </div>
-
-
 </body>
 
 <script>
-
     document.body.addEventListener('keypress', sorteiacores);
-    function sorteiacores(){
-
-  
-    for(let i = 1; i<=5;i++){
-        let box = document.querySelector("#box"+i);
-        box.style.backgroundColor = randomColor();
+    
+    function setTextColor(element, color) {
+        element.querySelector("p").innerHTML = color.toUpperCase();
     }
 
-    function randomColor(){
+    function sorteiacores() {
+        for (let i = 1; i <= 5; i++) {
+            let box = document.querySelector("#box" + i);
+            let color = randomColor();
+            box.style.backgroundColor = color;
+            setTextColor(box, color);
+        }
+    }
+
+    function randomColor() {
         return "#" + randomNumber() + randomNumber() + randomNumber();
     }
-    function randomNumber(){
-        return Math.floor(Math.random()*255).toString(16);
-        
-        
+
+    function randomNumber() {
+        return Math.floor(Math.random() * 255).toString(16).padStart(2, '0');
     }
-}
 </script>
 </html>
-
