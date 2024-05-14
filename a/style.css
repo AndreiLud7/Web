@@ -1,0 +1,15 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: content-box;
+
+}
+
+.container{
+    display: flex;
+    height: 100vh;
+}
+.box{
+    border: 1px solid black;
+    width: 20%;
+}
